@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maine Creative Retreat 2025 - Escape. Create. Transform.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Floating Leaves Animation -->
+    <div class="leaves-container">
+        <div class="leaf leaf1"></div>
+        <div class="leaf leaf2"></div>
+        <div class="leaf leaf3"></div>
+        <div class="leaf leaf4"></div>
+        <div class="leaf leaf5"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <video class="hero-video" autoplay muted loop playsinline poster="videos/autumn-forest-poster.jpg">
+                <source src="videos/autumn-forest.mp4" type="video/mp4">
+                <source src="videos/autumn-forest.webm" type="video/webm">
+                <!-- Fallback for browsers that don't support video -->
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Maine Creative Retreat</h1>
+            <h2 class="hero-subtitle">October 2025</h2>
+            <p class="hero-tagline">Where city souls find their wild creative spirit</p>
+            <div class="scroll-indicator">
+                <!-- <span>Discover Your Escape</span> -->
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="details-section">
+        <div class="section-content">
+            <div class="text-reveal">
+                <h2>Retreat Details</h2>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <h3>When</h3>
+                        <p>October 16-19, 2025<br><em>Peak foliage season</em></p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Where</h3>
+                        <p>Near Portland, Maine<br><em>Coastal charm meets autumn splendor</em></p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Included</h3>
+                        <p>Accommodation, meals, car rental, art supplies, guided creative sessions, nature walks<br><em>Airfare not included</em></p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Investment</h3>
+                        <p>$850 per person<br><em>Early bird: $750 until March 1st</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Escape Section -->
+    <section class="escape-section">
+        <div class="section-content">
+            <div class="text-reveal">
+                <div class="text-content">
+                    <h2>Leave the City Behind</h2>
+                    <p>Trade concrete for golden maple canopies. Exchange subway sounds for rustling leaves and babbling brooks. Step away from screens and into a world where creativity flows as naturally as mountain streams.</p>
+                </div>
+                <img src="gallery/stay.jpeg" alt="The Stay" loading="lazy" class="stay-image">
+            </div>
+        </div>
+        <div class="city-nature-transition"></div>
+    </section>
+
+    <!-- Create Section -->
+    <section class="create-section">
+        <div class="section-content">
+            <div class="text-reveal">
+                <h2>Create in Nature's Studio</h2>
+                <div class="creative-activities">
+                    <div class="activity">
+                        <h3>🎵 Music</h3>
+                        <p>Compose melodies inspired by wind through pines</p>
+                    </div>
+                    <div class="activity">
+                        <h3>✍️ Poetry</h3>
+                        <p>Find words in the language of autumn</p>
+                    </div>
+                    <div class="activity">
+                        <h3>🎨 Visual Art</h3>
+                        <p>Paint with nature's most vibrant palette</p>
+                    </div>
+                    <div class="activity">
+                        <h3>📖 Writing</h3>
+                        <p>Let stories unfold like morning mist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Last Year Section -->
+    <!-- <section class="memories-section">
+        <div class="section-content">
+            <div class="text-reveal">
+                <h2>Last Year's Magic</h2>
+                <div class="testimonials">
+                    <blockquote>
+                        <p>"I arrived burnt out from city life and left with a song in my heart and paint under my fingernails. This retreat reminded me why I became an artist."</p>
+                        <cite>— Sarah, Brooklyn</cite>
+                    </blockquote>
+                    <blockquote>
+                        <p>"The combination of stunning fall scenery and creative community was exactly what my soul needed. I wrote my best poetry in years."</p>
+                        <cite>— Marcus, Manhattan</cite>
+                    </blockquote>
+                    <blockquote>
+                        <p>"Three days of pure creative flow. No notifications, no deadlines, just pure inspiration surrounded by nature's artistry."</p>
+                        <cite>— Elena, Boston</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section">
+        <div class="section-content">
+            <div class="text-reveal">
+                <h2>Moments from Last Year</h2>
+                <p>See the magic through the eyes of our creative community</p>
+                
+                <div class="gallery-container">
+                    <div class="gallery-main">
+                        <div class="gallery-slides">
+                            <!-- Photos will be loaded here -->
+                            <div class="gallery-slide active" data-photo="1">
+                                <img src="gallery/retreat-1.jpg" alt="Artists creating in the golden autumn light" loading="lazy">
+                                <!-- <div class="slide-caption">
+                                    <h4>Community</h4>
+                                    <p>Find artistic community from all over the US</p>
+                                </div> -->
+                            </div>
+                            <div class="gallery-slide" data-photo="2">
+                                <img src="gallery/retreat-2.jpg" alt="Group poetry session by the lake" loading="lazy">
+                                <!-- <div class="slide-caption">
+                                    <h4>Natural w</h4>
+                                    <p>Hiking in the woods in peace</p>
+                                </div> -->
+                            </div>
+                            <div class="gallery-slide" data-photo="3">
+                                <img src="gallery/retreat-3.jpg" alt="Musical performance under autumn trees" loading="lazy">
+                                <!-- <div class="slide-caption">
+                                    <h4>Bonding Activities</h4>
+                                    <p>Music sessions harmonizing with rustling leaves</p>
+                                </div> -->
+                            </div>
+                            <div class="gallery-slide" data-photo="4">
+                                <img src="gallery/retreat-4.jpg" alt="Artists painting plein air style" loading="lazy">
+                                <!-- <div class="slide-caption">
+                                    <h4>Plein Air Magic</h4>
+                                    <p>Capturing Maine's beauty on canvas and in memory</p>
+                                </div> -->
+                            </div>
+                            <div class="gallery-slide" data-photo="5">
+                                <img src="gallery/retreat-5.jpeg" alt="Evening gathering around a cozy fire" loading="lazy">
+                                <!-- <div class="slide-caption">
+                                    <h4>Evening Connections</h4>
+                                    <p>Sharing stories and creative dreams by firelight</p>
+                                </div> -->
+                            </div>
+                            <div class="gallery-slide" data-photo="6">
+                                <img src="gallery/retreat-6.jpeg" alt="Writers journaling in scenic overlook" loading="lazy">
+                                <!-- <div class="slide-caption">
+                                    <h4>Written Reflections</h4>
+                                    <p>Finding words for the indescribable beauty of Maine</p>
+                                </div> -->
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation arrows -->
+                        <button class="gallery-nav prev" aria-label="Previous photo">
+                            <span>‹</span>
+                        </button>
+                        <button class="gallery-nav next" aria-label="Next photo">
+                            <span>›</span>
+                        </button>
+                        
+                        <!-- Auto-play control -->
+                        <button class="gallery-play-pause" aria-label="Pause slideshow">
+                            <span class="play-icon">⏸</span>
+                            <span class="pause-icon">▶</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Thumbnail navigation -->
+                    <div class="gallery-thumbnails">
+                        <button class="thumbnail active" data-slide="1">
+                            <img src="gallery/thumbs/retreat-1.jpg" alt="Thumbnail 1">
+                        </button>
+                        <button class="thumbnail" data-slide="2">
+                            <img src="gallery/thumbs/retreat-2.jpg" alt="Thumbnail 2">
+                        </button>
+                        <button class="thumbnail" data-slide="3">
+                            <img src="gallery/thumbs/retreat-3.jpg" alt="Thumbnail 3">
+                        </button>
+                        <button class="thumbnail" data-slide="4">
+                            <img src="gallery/thumbs/retreat-4.jpg" alt="Thumbnail 4">
+                        </button>
+                        <button class="thumbnail" data-slide="5">
+                            <img src="gallery/thumbs/retreat-5.jpeg" alt="Thumbnail 5">
+                        </button>
+                        <button class="thumbnail" data-slide="6">
+                            <img src="gallery/thumbs/retreat-6.jpeg" alt="Thumbnail 6">
+                        </button>
+                    </div>
+                    
+                    <!-- Progress indicator -->
+                    <div class="gallery-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Signup Section -->
+    <!-- <section class="signup-section">
+        <div class="section-content">
+            <div class="signup-container">
+                <h2>Reserve Your Creative Escape</h2>
+                <p>Limited to 20 artists for an intimate experience</p>
+                
+                <form class="signup-form" id="signupForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Full Name</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email Address</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="city" name="city" required>
+                        <label for="city">Current City</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="medium" name="medium" required>
+                            <option value="">Select your primary creative medium</option>
+                            <option value="music">Music</option>
+                            <option value="poetry">Poetry</option>
+                            <option value="visual-art">Visual Art</option>
+                            <option value="writing">Writing</option>
+                            <option value="photography">Photography</option>
+                            <option value="mixed-media">Mixed Media</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="inspiration" name="inspiration" rows="3"></textarea>
+                        <label for="inspiration">What inspires your creativity? (Optional)</label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>Join the Retreat</span>
+                        <div class="btn-leaves"></div>
+                    </button>
+                </form>
+                
+                <div class="form-success" id="formSuccess">
+                    <h3>Welcome to the retreat!</h3>
+                    <p>We'll send you more details soon. Get ready for an unforgettable creative journey.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Maine Creative Retreat. Crafted with love for artists and dreamers.</p>
+            <div class="footer-links">
+                <a href="logistics.html">Logistics</a>
+                <a href="mailto:hello@mainecreativeretreat.com">Contact Us</a>
+                <a href="#privacy">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
