@@ -187,7 +187,7 @@ body {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 2rem;
+    bottom: -3rem;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -237,6 +237,60 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Hero CTA Button */
+.hero-cta-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--text-light);
+    border-radius: 50px;
+    color: var(--text-light);
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    margin: 0.5rem 0 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out 0.9s both;
+    backdrop-filter: blur(5px);
+}
+
+.hero-cta-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.hero-cta-btn:active {
+    transform: translateY(-1px);
+}
+
+.hero-cta-btn:visited {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+/* Add a subtle glow effect */
+.hero-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.hero-cta-btn:hover::before {
+    left: 100%;
 }
 
 /* Section Styles */
@@ -805,8 +859,14 @@ cite {
         45deg,
         var(--warm-yellow) 0%,
         var(--primary-orange) 100%
-    );
-    color: var(--text-light);
+    ) !important;
+    color: var(--text-light) !important;
+    position: relative;
+    z-index: 2;
+}
+
+.interest-form-section .section-content {
+    padding: 5rem 2rem;
 }
 
 .interest-form-container {
@@ -815,56 +875,71 @@ cite {
     text-align: center;
 }
 
+.interest-form-section .text-reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 .interest-form-section h2 {
-    font-family: 'Amatic SC', cursive;
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    margin-bottom: 1rem;
+    font-family: 'Amatic SC', cursive !important;
+    font-size: clamp(2.5rem, 6vw, 4rem) !important;
+    margin-bottom: 1rem !important;
+    color: var(--text-light) !important;
 }
 
 .interest-form-section p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
+    font-size: 1.2rem !important;
+    margin-bottom: 1.5rem !important;
+    opacity: 0.9 !important;
+    color: var(--text-light) !important;
 }
 
-.form-deadline {
+.interest-form-section .form-deadline {
     font-size: 1.3rem !important;
     margin-bottom: 2rem !important;
-    color: var(--cream);
+    color: var(--cream) !important;
 }
 
 .interest-form-btn {
-    display: inline-block;
-    padding: 1.2rem 2.5rem;
-    background: rgba(255, 255, 255, 0.15);
-    border: 2px solid var(--text-light);
-    border-radius: 50px;
-    color: var(--text-light);
-    font-family: 'Amatic SC', cursive;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
+    display: inline-block !important;
+    padding: 1.2rem 2.5rem !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 2px solid var(--text-light) !important;
+    border-radius: 50px !important;
+    color: var(--text-light) !important;
+    font-family: 'Amatic SC', cursive !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    margin: 2rem 0;
+    margin: 2rem 0 !important;
 }
 
 .interest-form-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+    color: var(--text-light) !important;
+    text-decoration: none !important;
 }
 
 .interest-form-btn:active {
-    transform: translateY(0);
+    transform: translateY(0) !important;
 }
 
-.form-note {
+.interest-form-btn:visited {
+    color: var(--text-light) !important;
+    text-decoration: none !important;
+}
+
+.interest-form-section .form-note {
     font-size: 1rem !important;
     margin-top: 1.5rem !important;
-    opacity: 0.8;
-    font-style: italic;
+    opacity: 0.8 !important;
+    font-style: italic !important;
+    color: var(--text-light) !important;
 }
 
 /* Signup Section */
@@ -1415,6 +1490,27 @@ cite {
         padding: 3rem 1rem;
     }
     
+    /* Interest Form Mobile Styles */
+    .interest-form-section .section-content {
+        padding: 4rem 1.5rem !important;
+    }
+    
+    .interest-form-section h2 {
+        font-size: clamp(2.2rem, 7vw, 3.5rem) !important;
+    }
+    
+    .interest-form-btn {
+        padding: 1.1rem 2.2rem !important;
+        font-size: 1.4rem !important;
+    }
+    
+    /* Hero CTA Mobile Styles */
+    .hero-cta-btn {
+        padding: 0.9rem 2rem;
+        font-size: 1.3rem;
+        margin: 0.5rem 0 1.5rem;
+    }
+    
     .escape-section .text-reveal {
         flex-direction: column;
         gap: 2rem;
@@ -1480,6 +1576,32 @@ cite {
     .form-group select,
     .form-group textarea {
         font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Interest Form Mobile Optimization */
+    .interest-form-section .section-content {
+        padding: 3rem 1rem !important;
+    }
+    
+    .interest-form-section h2 {
+        font-size: clamp(2rem, 8vw, 3rem) !important;
+    }
+    
+    .interest-form-section p {
+        font-size: 1.1rem !important;
+    }
+    
+    .interest-form-btn {
+        padding: 1rem 2rem !important;
+        font-size: 1.3rem !important;
+        margin: 1.5rem 0 !important;
+    }
+    
+    /* Hero CTA Small Mobile Styles */
+    .hero-cta-btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 1.2rem;
+        margin: 0.3rem 0 1.2rem;
     }
     
     /* On very small screens, we might want to pause video to save data */
