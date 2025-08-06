@@ -799,6 +799,74 @@ cite {
     font-size: 0.9rem;
 }
 
+/* Interest Form Section */
+.interest-form-section {
+    background: linear-gradient(
+        45deg,
+        var(--warm-yellow) 0%,
+        var(--primary-orange) 100%
+    );
+    color: var(--text-light);
+}
+
+.interest-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.interest-form-section h2 {
+    font-family: 'Amatic SC', cursive;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 1rem;
+}
+
+.interest-form-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.form-deadline {
+    font-size: 1.3rem !important;
+    margin-bottom: 2rem !important;
+    color: var(--cream);
+}
+
+.interest-form-btn {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid var(--text-light);
+    border-radius: 50px;
+    color: var(--text-light);
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin: 2rem 0;
+}
+
+.interest-form-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.interest-form-btn:active {
+    transform: translateY(0);
+}
+
+.form-note {
+    font-size: 1rem !important;
+    margin-top: 1.5rem !important;
+    opacity: 0.8;
+    font-style: italic;
+}
+
 /* Signup Section */
 .signup-section {
     background: linear-gradient(
