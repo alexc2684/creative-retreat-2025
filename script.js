@@ -74,30 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
     
-    // Enhanced leaf animation - create more leaves dynamically
-    const enhanceLeafAnimation = () => {
+    // Remove leaf animation on landing to reduce visual noise
+    const removeLeafAnimationIfPresent = () => {
         const leavesContainer = document.querySelector('.leaves-container');
-        const leafCount = 8;
-        
-        for (let i = 6; i <= leafCount; i++) {
-            const leaf = document.createElement('div');
-            leaf.className = `leaf leaf${i}`;
-            leaf.style.left = `${Math.random() * 100}%`;
-            leaf.style.animationDelay = `${Math.random() * 10}s`;
-            leaf.style.animationDuration = `${12 + Math.random() * 8}s`;
-            
-            // Random leaf shapes and colors
-            const leafTypes = [
-                { radius: '0 100% 0 100%', bg: 'linear-gradient(45deg, #D2691E, #DAA520)' },
-                { radius: '50% 0 50% 0', bg: 'linear-gradient(45deg, #DAA520, #CD853F)' },
-                { radius: '0 50% 100% 50%', bg: 'linear-gradient(45deg, #8B4513, #D2691E)' }
-            ];
-            
-            const randomType = leafTypes[Math.floor(Math.random() * leafTypes.length)];
-            leaf.style.borderRadius = randomType.radius;
-            leaf.style.background = randomType.bg;
-            
-            leavesContainer.appendChild(leaf);
+        if (leavesContainer) {
+            leavesContainer.remove();
         }
     };
     
@@ -337,10 +318,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!slides.length) return; // Exit if no gallery found
         
         let currentSlide = 0;
-        let isPlaying = true;
+        let isPlaying = false; // default to manual to reduce distraction
         let autoPlayInterval;
         let progressInterval;
-        const slideSpeed = 5000; // 5 seconds per slide
+        const slideSpeed = 3000; // faster when enabled
         
         // Initialize gallery
         const initGallery = () => {
@@ -382,7 +363,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Auto-play functionality
         const startAutoPlay = () => {
             if (!isPlaying) return;
-            
             autoPlayInterval = setInterval(nextSlide, slideSpeed);
             playPauseBtn.classList.remove('paused');
             startProgressBar();
@@ -446,7 +426,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        playPauseBtn.addEventListener('click', toggleAutoPlay);
+        if (playPauseBtn) {
+            playPauseBtn.addEventListener('click', toggleAutoPlay);
+            // set UI to paused state initially
+            playPauseBtn.classList.add('paused');
+        }
         
         // Thumbnail navigation
         thumbnails.forEach((thumb, index) => {
@@ -558,20 +542,57 @@ document.addEventListener('DOMContentLoaded', function() {
         galleryMain.setAttribute('role', 'region');
         galleryMain.setAttribute('aria-label', 'Photo gallery from last year\'s retreat');
     };
+
+    // Personalizable activities data (easy to edit)
+    const plannedActivitiesData = [
+        { title: '🌞 Morning Meditation', desc: 'Short guided session to start the day grounded and focused.' },
+        { title: '🍁 Nature Hike', desc: 'Scenic walk or drive to enjoy peak fall colors in Maine.' },
+        { title: '🛁 Hot Tub & Relaxation', desc: 'Unwind with a soak while taking in the autumn views.' },
+        { title: '🔥 Firepit Gathering', desc: 'Evening conversations, stories, and warmth under the stars.' },
+        { title: '🎨 Deep Focus Sessions', desc: 'Dedicated blocks of time for working on personal creative projects.' },
+        { title: '🤝 Icebreaker Circle', desc: 'Fun, low-pressure activities to connect with fellow attendees.' },
+        { title: '🎭 Art Exploration Stations', desc: 'Experiment with other attendees’ mediums and try something new.' },
+        { title: '📣 Creative Presentations', desc: 'Share your finished or in-progress work with the group.' }
+    ];
+
+    const renderPlannedActivities = () => {
+        const container = document.getElementById('plannedActivities');
+        if (!container) return;
+        container.innerHTML = plannedActivitiesData.map(({ title, desc }) => `
+            <div class="activity-card">
+                <h3>${title}</h3>
+                <p>${desc}</p>
+            </div>
+        `).join('');
+    };
     
     // Initialize all functions
     const init = () => {
         observeElements();
         videoBackgroundSetup(); // New video background setup
-        enhanceLeafAnimation();
+        removeLeafAnimationIfPresent();
         smoothScrolling();
         handleForm();
         activityHoverEffects();
         testimonialAnimation();
         gallerySetup(); // Initialize photo gallery
+        renderPlannedActivities();
         scrollProgress();
         animateSubmitButton();
         addFloatingAnimation();
+        // Deadline countdown (announcement bar)
+        const deadline = new Date('2025-08-15T23:59:59-04:00');
+        const el = document.getElementById('deadlineCountdown');
+        if (el) {
+            const tick = () => {
+                const left = deadline - new Date();
+                if (left <= 0) { el.textContent = ' — deadline passed'; return; }
+                const days = Math.ceil(left / (1000*60*60*24));
+                el.textContent = ` — ${days} day${days>1?'s':''} left to apply`;
+            };
+            tick();
+            setInterval(tick, 60000);
+        }
         
         // Add resize listener for responsive adjustments
         window.addEventListener('resize', throttle(() => {

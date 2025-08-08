@@ -28,7 +28,20 @@ body {
     --text-light: #F5F5F5;
 }
 
-/* Floating Leaves Animation */
+/* Announcement Bar */
+.announcement-bar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(90deg, var(--deep-brown), #5D2F05);
+    color: var(--text-light);
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+}
+
+/* Floating Leaves Animation (kept for reference; not used on landing) */
 .leaves-container {
     position: fixed;
     top: 0;
@@ -185,6 +198,12 @@ body {
     animation: fadeInUp 1s ease-out 0.6s both;
 }
 
+.hero-specs {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-top: -0.5rem;
+}
+
 .scroll-indicator {
     position: absolute;
     bottom: -3rem;
@@ -335,40 +354,64 @@ section {
 }
 
 .escape-section .text-reveal {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 2rem;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.escape-section .text-content {
-    flex: 1;
+.escape-details-card {
+    order: 1; /* card on the left */
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-dark);
+    border-radius: 16px;
+    padding: 1rem 1.25rem; /* tighter to match image visual density */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 100%;
 }
 
-.escape-section .text-content h2 {
-    margin-bottom: 2rem;
-    text-align: left;
+.escape-details-card h3 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem;
+    color: var(--deep-brown);
+    margin-bottom: 0.75rem;
 }
 
-.escape-section p {
-    font-size: clamp(1.1rem, 3vw, 1.3rem);
-    color: var(--text-light);
-    line-height: 1.8;
-    opacity: 0.95;
-    text-align: left;
+.escape-details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.escape-details-list li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0.6rem;
+    padding: 0.4rem 0; /* tighter vertical rhythm */
+    border-bottom: 1px dashed rgba(139,69,19,0.2);
+}
+
+.escape-details-list li:last-child {
+    border-bottom: none;
+}
+
+.escape-details-list .label {
+    font-weight: 700;
+    color: var(--deep-brown);
 }
 
 .stay-image {
-    max-width: 400px;
+    order: 2; /* image on the right */
+    max-width: 100%;
     width: 100%;
     height: auto;
-    border-radius: 15px;
+    border-radius: 16px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     object-fit: cover;
     aspect-ratio: 16/10;
-    flex-shrink: 0;
 }
 
 .stay-image:hover {
@@ -434,6 +477,53 @@ section {
 .memories-section {
     background: var(--cream);
     text-align: center;
+}
+
+/* Activities Section */
+.activities-section {
+    background: linear-gradient(180deg, #FFF9EF 0%, #F6EEDD 100%);
+    color: var(--text-dark);
+}
+
+.activities-section h2 {
+    font-family: 'Amatic SC', cursive;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--deep-brown);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.activities-note {
+    text-align: center;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.activity-card {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid rgba(139,69,19,0.12);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    padding: 1rem 1.1rem;
+}
+
+.activity-card h3 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.6rem;
+    color: var(--deep-brown);
+    margin-bottom: 0.35rem;
+}
+
+.activity-card p {
+    font-size: 0.98rem;
+    opacity: 0.9;
 }
 
 .memories-section h2 {
@@ -807,16 +897,34 @@ cite {
 
 .details-section h2 {
     font-family: 'Amatic SC', cursive;
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 700;
+    letter-spacing: 0.5px;
     text-align: center;
     margin-bottom: 3rem;
     color: var(--deep-brown);
+}
+
+/* Emphasized summary text under "What This Is" */
+.details-section .summary-text {
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    font-weight: 600;
+    line-height: 1.8;
+    text-align: center;
+    color: var(--deep-brown);
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .details-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+}
+
+.section-cta {
+    margin-top: 2rem;
+    text-align: center;
 }
 
 .detail-item {
@@ -1483,6 +1591,33 @@ cite {
     color: var(--warm-yellow);
 }
 
+/* Mobile sticky CTA */
+.mobile-sticky-cta {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-sticky-cta {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        padding: 0.75rem 1rem env(safe-area-inset-bottom);
+        background: linear-gradient(90deg, var(--deep-brown), #5D2F05);
+        text-align: center;
+    }
+
+    .mobile-sticky-cta .interest-form-btn {
+        margin: 0 !important;
+        padding: 0.9rem 1.4rem !important;
+        font-size: 1.2rem !important;
+        border-color: rgba(255,255,255,0.8) !important;
+        background: rgba(255, 255, 255, 0.15) !important;
+    }
+}
+
 /* Responsive Design */
 /* Mobile and Tablet Optimizations */
 @media (max-width: 768px) {
@@ -1512,16 +1647,8 @@ cite {
     }
     
     .escape-section .text-reveal {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .escape-section .text-content h2 {
-        text-align: center;
-    }
-    
-    .escape-section p {
-        text-align: center;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
     
     .stay-image {
