@@ -581,7 +581,7 @@ document.addEventListener('DOMContentLoaded', function() {
         animateSubmitButton();
         addFloatingAnimation();
         // Deadline countdown (announcement bar)
-        const deadline = new Date('2025-08-15T23:59:59-04:00');
+        const deadline = new Date('2025-08-22T23:59:59-04:00');
         const el = document.getElementById('deadlineCountdown');
         if (el) {
             const tick = () => {
